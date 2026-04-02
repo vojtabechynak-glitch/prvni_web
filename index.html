@@ -13,35 +13,44 @@
 
         h1 {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 60px;
         }
 
         .center-img {
             display: block;
             margin: 20px auto;
             width: 300px;
+            border-radius: 10px;
         }
 
-        ol {
-            list-style-type: none;
-            counter-reset: item;
+        /* MENU jako Wikipedia */
+        .menu {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .menu a {
+            display: block;
+            color: blue;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        /* Obsah */
+        .content {
             max-width: 600px;
             margin: 40px auto;
-            padding-left: 0;
         }
 
-        li {
-            counter-increment: item;
-            margin-bottom: 10px;
-            padding-left: 35px;
-            position: relative;
-        }
-
-        li::before {
-            content: counter(item) ") ";
-            position: absolute;
-            left: 0;
-            font-weight: bold;
+        h2 {
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -49,16 +58,32 @@
 
     <h1>Minecraft's best tips + tricks</h1>
 
-    <img src="./minecraft.jpg" alt="Minecraft obrázek" class="center-img">
+    <img src="./minecraft.jpg" class="center-img">
+    <!-- MENU -->
+    <div class="menu">
+        <b>Obsah:</b>
+        <a href="#tip1">Mace</a>
+        <a href="#tip2">Tip 2</a>
+        <a href="#tip3">Redstone</a>
+    </div>
 
-    <ol>
-        <li>You can repair mace with mending, but even with breezerods on anvil.</li>
-        <img src="./mace+breezerod.png" alt="Minecraft obrázek" class="center-img">
-        <li>The cauldron can pick up water by time + if you place dripstone under lava it can make new lava.(under the lava is block)</li>
-        <img src="./lava_dripstone.png" alt="Minecraft obrázek" class="center-img">
-        <li>You can deal more damage with the mace, if you hit the target with something else and at the same tick swap to the mace.</li>
-       <img src="./mace_swap.png" alt="Minecraft obrázek" class="center-img">
-    </ol>
+    <!-- Tips -->
+    <div class="content">
+
+        <h2 id="tip1">Mace</h2>
+        <p>You can repair mace with mending, but even with breezerods on anvil.</p>
+        <img src="./mace+breezerod.png" class="center-img">
+        <p>You can deal more damage with the mace, if you hit the target with something else and at the same tick swap to the mace.</p>
+        <img src="./mace_swap.png" class="center-img">
+
+        <h2 id="tip2">Tip 2</h2>
+        <p>The cauldron can pick up water by time + if you place dripstone under lava it can make new lava.</p>
+
+        <h2 id="tip3">Redstone</h2>
+        <p>Redstone torches can be used as reverse signal.</p>
+        <img src="./redstone_torch.png" class="center-img">
+
+    </div>
 
 </body>
 </html>
