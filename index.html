@@ -44,6 +44,13 @@
             text-decoration: underline;
         }
 
+        .navbar a.active {
+            background-color: #555;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
         h1 {
             text-align: center;
             margin-top: 20px;
@@ -63,6 +70,13 @@
             width: 300px;
             max-width: 100%;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .center-img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
@@ -150,7 +164,7 @@
 
     <!-- 🔥 NAVBAR -->
     <nav class="navbar">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="mace.html">Mace</a>
         <a href="pvp.html">PvP</a>
         <a href="survival.html">Survival</a>
