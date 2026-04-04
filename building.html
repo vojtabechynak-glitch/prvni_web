@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 28px;
+        }
+
+        .navbar {
+            background: #333;
+            padding: 10px 15px;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 0 15px;
+        }
+
+        .center-img {
+            display: block;
+            margin: 15px auto;
+            width: 250px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .back {
+            display: block;
+            margin-top: 30px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .back:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 22px;
+                margin-top: 20px;
+            }
+
+            .navbar {
+                padding: 8px 10px;
+                gap: 8px;
+            }
+
+            .navbar a {
+                font-size: 12px;
+            }
+
+            .center-img {
+                width: 200px;
+            }
+
+            .content {
+                margin: 30px auto;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 20px;
+                margin-top: 15px;
+            }
+
+            .navbar {
+                padding: 8px 5px;
+                gap: 5px;
+            }
+
+            .navbar a {
+                font-size: 11px;
+                margin: 0 2px;
+            }
+
+            .center-img {
+                width: 100%;
+                max-width: 200px;
+            }
+
+            .content {
+                margin: 20px 10px;
+                padding: 0 10px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="mace.html">Mace</a>
+    <a href="pvp.html">PvP</a>
+    <a href="survival.html">Survival</a>
+    <a href="mining.html">Mining</a>
+    <a href="building.html">Building</a>
+    <a href="enchanting.html">Enchanting</a>
+</nav>
+
+    <h1>Building Tips</h1>
+
+    <div class="content">
+
+        <p>Use different wood types and stairs to add depth and detail to your structures.</p>
+        <img src="./building.png" class="center-img">
+
+        <p>Combine multiple materials like stone, wood, and concrete for better aesthetics.</p>
+        <img src="./building.png" class="center-img">
+
+        <a href="index.html" class="back">⬅ Back to main page</a>
+
+    </div>
+
+</body>
+</html>
