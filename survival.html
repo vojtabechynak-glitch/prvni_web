@@ -4,154 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Survival</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial;
-            margin: 0;
-            background: #f5f5f5;
-        }
-
-        h1 {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 28px;
-        }
-
-        .navbar {
-            background: #333;
-            padding: 10px 15px;
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar a:hover {
-            background-color: #555;
-            padding: 8px 12px;
-            border-radius: 5px;
-        }
-
-        .navbar a.active {
-            background-color: #27AE60;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .content {
-            max-width: 800px;
-            margin: 40px auto;
-            text-align: center;
-            padding: 0 15px;
-        }
-
-        .center-img {
-            display: block;
-            margin: 15px auto;
-            width: 250px;
-            max-width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-
-        .center-img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .back {
-            display: inline-block;
-            margin-top: 30px;
-            background-color: #333;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: bold;
-        }
-
-        .back:hover {
-            background-color: #555;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 22px;
-                margin-top: 20px;
-            }
-
-            .navbar {
-                padding: 8px 10px;
-                gap: 8px;
-            }
-
-            .navbar a {
-                font-size: 12px;
-            }
-
-            .center-img {
-                width: 200px;
-            }
-
-            .content {
-                margin: 30px auto;
-            }
-
-            p {
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 20px;
-                margin-top: 15px;
-            }
-
-            .navbar {
-                padding: 8px 5px;
-                gap: 5px;
-            }
-
-            .navbar a {
-                font-size: 11px;
-                margin: 0 2px;
-            }
-
-            .center-img {
-                width: 100%;
-                max-width: 200px;
-            }
-
-            .content {
-                margin: 20px 10px;
-                padding: 0 10px;
-            }
-
-            p {
-                font-size: 13px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./CSS.css">
 </head>
 <body>
 
@@ -164,6 +17,7 @@
     <a href="mining.html">Mining</a>
     <a href="building.html">Building</a>
     <a href="enchanting.html">Enchanting</a>
+    <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode">🌙</button>
 </nav>
 
     <h1>Survival Tips</h1>
@@ -171,14 +25,36 @@
     <div class="content">
 
         <p>You can create infinite lava using dripstone and a cauldron.</p>
-        <img src="./lava_dripstone.png" class="center-img">
+        <img src="./obrázky/lava_dripstone.png" class="center-img">
 
         <p>Always carry a water bucket — it can save you from fall damage or lava.</p>
-        <img src="./flatground.png" class="center-img">
+        <img src="./obrázky/grassblock.png" class="center-img">
 
         <a href="index.html" class="back">⬅ Back to main page</a>
 
     </div>
+
+    <script>
+        const darkModeBtn = document.getElementById('darkModeBtn');
+        const body = document.body;
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeBtn.textContent = '☀️';
+        }
+
+        darkModeBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                darkModeBtn.textContent = '☀️';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                darkModeBtn.textContent = '🌙';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
 
 </body>
 </html>
