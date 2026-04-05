@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enchanting tips and tricks for Minecraft — maximize your equipment with the best enchantments.">
     <title>Enchanting</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./CSS.css">
 </head>
 <body>
@@ -15,9 +19,9 @@
     <a href="pvp.html">PvP</a>
     <a href="survival.html">Survival</a>
     <a href="mining.html">Mining</a>
-    <a href="building.html">Building</a>
     <a href="enchanting.html" class="active">Enchanting</a>
-    <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode">🌙</button>
+    <a href="building.html">Building</a>
+    <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode" aria-label="Toggle dark mode">🌙</button>
 </nav>
 
     <h1>Enchanting Tips</h1>
@@ -34,27 +38,7 @@
 
     </div>
 
-    <script>
-        const darkModeBtn = document.getElementById('darkModeBtn');
-        const body = document.body;
-
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            darkModeBtn.textContent = '☀️';
-        }
-
-        darkModeBtn.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                darkModeBtn.textContent = '☀️';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeBtn.textContent = '🌙';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-    </script>
+    <script src="./script.js"></script>
 
 </body>
 </html>
