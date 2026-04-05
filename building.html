@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building tips and tricks for Minecraft — get inspiration and techniques for impressive structures.">
     <title>Building</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./CSS.css">
 </head>
-<body>
+<body class="page-building">
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -15,46 +19,83 @@
     <a href="pvp.html">PvP</a>
     <a href="survival.html">Survival</a>
     <a href="mining.html">Mining</a>
-    <a href="building.html" class="active">Building</a>
     <a href="enchanting.html">Enchanting</a>
-    <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode">🌙</button>
+    <a href="building.html" class="active">Building</a>
+    <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode" aria-label="Toggle dark mode">🌙</button>
 </nav>
 
     <h1>Building Tips</h1>
 
     <div class="content">
 
-        <p>Use different wood types and stairs to add depth and detail to your structures.</p>
-        <img src="./obrázky/building.png" class="center-img">
+        <div class="tip-section">
+            <h3>🌲 Mix Wood Types for Depth</h3>
+            <p>Using a single wood type makes builds look flat and repetitive.
+               Mix <strong>Oak, Spruce, Dark Oak, and Acacia</strong> to add visual contrast.
+               Use <strong>stairs and slabs</strong> instead of full blocks for roofs and overhangs —
+               they create depth and prevent the "box" look that beginners often struggle with.</p>
+        </div>
 
-        <p>Combine multiple materials like stone, wood, and concrete for better aesthetics.</p>
-        <img src="./obrázky/build.png" class="center-img">
+        <figure>
+            <img src="./obrázky/building.png" class="center-img" alt="Building with varied wood types in Minecraft">
+            <figcaption>Mixing wood types and using stairs significantly improves the look of any structure</figcaption>
+        </figure>
+
+        <div class="tip-section">
+            <h3>🪨 Combine Materials for Aesthetics</h3>
+            <p>Great builds use at least <strong>3–4 complementary materials</strong>. A classic combo is
+               <em>Spruce logs + Stone Bricks + Cobblestone + Oak Planks</em> for a medieval style.
+               Add <strong>glass pane windows</strong> to break up large walls, and use
+               <strong>trapdoors, item frames, and banners</strong> as decorative details that add personality without bulk.</p>
+        </div>
+
+        <figure>
+            <img src="./obrázky/build.png" class="center-img" alt="Detailed Minecraft build">
+            <figcaption>Stone, wood, and concrete together create much more interesting textures than any single material</figcaption>
+        </figure>
+
+        <div class="tip-section">
+            <h3>📐 Plan on Flat Ground First</h3>
+            <p>Before starting a large project, find or create a <strong>flat area</strong> and lay out the footprint of your build using wool or concrete.
+               This lets you visualise proportions before committing resources.
+               Use <strong>odd numbers</strong> for width and height (5, 7, 9 blocks wide) —
+               structures with odd dimensions tend to look more natural and balanced than even ones.</p>
+        </div>
+
+        <figure>
+            <img src="./obrázky/flatground.png" class="center-img" alt="Flat terrain for planning builds">
+            <figcaption>Planning your build on flat terrain first saves a lot of time and materials</figcaption>
+        </figure>
+
+        <div class="tip-section">
+            <h3>💡 Add Interior Lighting Creatively</h3>
+            <p>Avoid placing bare torches everywhere — they break immersion. Instead use
+               <strong>sea lanterns, lanterns, shroomlights, glowstone</strong>, or hide light sources inside blocks using
+               <em>end rod lighting</em> or carpets over glowstone.
+               For medieval builds, use <strong>iron bars as torch holders</strong> on walls for a classic dungeon look.</p>
+        </div>
+
+        <div class="tip-section">
+            <h3>🏘️ Vary the Roofline</h3>
+            <p>One of the most common beginner mistakes is building a flat or uniformly pitched roof.
+               Add <strong>towers, dormers, and overhangs</strong> at different heights.
+               A roofline with varying levels makes even a simple house look complex and interesting.
+               Try combining <strong>Spruce stairs + mossy cobblestone walls</strong> for a classic fantasy-style roof trim.</p>
+        </div>
+
+        <div class="tip-box">
+            <div class="tip-box-title">💡 Pro Tip — Building Material Palettes</div>
+            <p>🌲 <strong>Medieval/Fantasy</strong>: Spruce logs, Stone Bricks, Mossy Cobblestone, Dark Oak planks<br>
+               🏖️ <strong>Beach/Tropical</strong>: Sandstone, Acacia planks, Jungle trapdoors, Sea Lanterns<br>
+               🏙️ <strong>Modern</strong>: Quartz blocks, White Concrete, Tinted Glass, Smooth Stone<br>
+               🌿 <strong>Cozy Cottage</strong>: Oak planks, Mud Bricks, Birch slabs, Flower Pots + plants</p>
+        </div>
 
         <a href="index.html" class="back">⬅ Back to main page</a>
 
     </div>
 
-    <script>
-        const darkModeBtn = document.getElementById('darkModeBtn');
-        const body = document.body;
-
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            darkModeBtn.textContent = '☀️';
-        }
-
-        darkModeBtn.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                darkModeBtn.textContent = '☀️';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeBtn.textContent = '🌙';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-    </script>
+    <script src="./script.js"></script>
 
 </body>
 </html>

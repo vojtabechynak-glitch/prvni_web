@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The best tips and tricks for Minecraft — PvP, Survival, Mining, Enchanting, Building and more.">
     <title>Minecraft Tips</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛏️</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./CSS.css">
@@ -19,7 +21,7 @@
         <a href="mining.html">Mining</a>
         <a href="enchanting.html">Enchanting</a>
         <a href="building.html">Building</a>
-        <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode">🌙</button>
+        <button class="dark-mode-btn" id="darkModeBtn" title="Toggle Dark Mode" aria-label="Toggle dark mode">🌙</button>
     </nav>
 
     <h1>Minecraft's best tips + tricks</h1>
@@ -110,29 +112,9 @@
 
     </div>
 
+    <script src="./script.js"></script>
+
     <script>
-        // Dark Mode Toggle
-        const darkModeBtn = document.getElementById('darkModeBtn');
-        const body = document.body;
-
-        // Check if dark mode was previously saved
-        if (localStorage.getItem('darkMode') === 'enabled') {
-            body.classList.add('dark-mode');
-            darkModeBtn.textContent = '☀️';
-        }
-
-        darkModeBtn.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-            
-            if (body.classList.contains('dark-mode')) {
-                darkModeBtn.textContent = '☀️';
-                localStorage.setItem('darkMode', 'enabled');
-            } else {
-                darkModeBtn.textContent = '🌙';
-                localStorage.setItem('darkMode', 'disabled');
-            }
-        });
-
         // Search Functionality
         const searchBox = document.getElementById('searchBox');
         const pageCards = document.querySelectorAll('.page-card');
