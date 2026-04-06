@@ -114,26 +114,5 @@
 
     <script src="./script.js"></script>
 
-    <script>
-        // Search Functionality
-        const searchBox = document.getElementById('searchBox');
-        const pageCards = document.querySelectorAll('.page-card');
-
-        searchBox.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase();
-
-            pageCards.forEach(card => {
-                const title = card.querySelector('.page-card-title').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-
-                if (title.includes(searchTerm) || description.includes(searchTerm) || searchTerm === '') {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>

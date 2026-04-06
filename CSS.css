@@ -15,6 +15,7 @@
 }
 
 /* ===== GLOBAL STYLES ===== */
+html { scroll-behavior: smooth; }
 * { box-sizing: border-box; }
 
 body {
@@ -348,11 +349,127 @@ a[href="building.html"].active {
     background-color: #A0522D !important;
 }
 
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 19px; /* 3 spans × 3px + 2 gaps × 5px = 19px */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* translateY values = distance from outer span to middle span (8px = (19px - 3px) / 2) */
+.hamburger-btn.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger-btn.open span:nth-child(2) { opacity: 0; }
+.hamburger-btn.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ===== NAV LINKS WRAPPER ===== */
+.nav-links {
+    display: contents;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    z-index: 9999;
+    transition: width 0.1s linear;
+    pointer-events: none;
+}
+
+/* ===== SCROLL TO TOP BUTTON ===== */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--navbar-bg);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: var(--shadow-medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-3px);
+    background-color: var(--navbar-hover);
+}
+
+body.dark-mode .scroll-top-btn { background-color: #444; }
+body.dark-mode .scroll-top-btn:hover { background-color: #555; }
+
+/* ===== NO RESULTS MESSAGE ===== */
+.no-results {
+    display: none;
+    text-align: center;
+    color: #888;
+    font-size: 15px;
+    margin: 10px 0 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+}
+
+.no-results.visible { display: block; }
+
+body.dark-mode .no-results {
+    background: #2a2a2a;
+    color: #999;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-    body { padding-top: 90px; }
-    .navbar { padding: 8px 10px; gap: 8px; }
-    .navbar a { font-size: 12px; }
+    body { padding-top: 60px; }
+    .navbar { justify-content: space-between; flex-wrap: nowrap; padding: 10px 15px; gap: 0; }
+    .hamburger-btn { display: flex; }
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--navbar-bg);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        gap: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+    }
+    .nav-links.open { display: flex; }
+    .navbar a { font-size: 14px; }
     h1 { font-size: 22px; margin-top: 15px; }
     h2 { font-size: 18px; }
     .center-img { width: 250px; }
@@ -361,12 +478,11 @@ a[href="building.html"].active {
 }
 
 @media (max-width: 480px) {
-    body { padding-top: 110px; }
-    .navbar { padding: 8px 5px; gap: 5px; }
-    .navbar a { font-size: 11px; margin: 0 2px; }
+    body { padding-top: 60px; }
     h1 { font-size: 20px; }
     h2 { font-size: 16px; }
     .center-img { width: 100%; max-width: 280px; }
     .content { margin: 20px 10px; padding: 0 10px; }
     p { font-size: 13px; }
+    .scroll-top-btn { bottom: 15px; right: 15px; }
 }
